@@ -22,7 +22,7 @@ uv1_scale = Vector3( 1, 5, 1 )
 
 [sub_resource type="SpatialMaterial" id=2]
 params_line_width = 0.1
-albedo_color = Color( 1, 1, 1, 0 )
+albedo_color = Color( 0.584314, 0.376471, 0.486275, 0.65098 )
 albedo_texture = ExtResource( 4 )
 normal_enabled = true
 normal_scale = -2.0
