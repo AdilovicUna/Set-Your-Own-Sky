@@ -6,6 +6,14 @@ const POS = [-5, 0, 5]
 var beers = []
 var next_beer_xPos = 100
 
+"""
+loop through collisions of player
+for each collision chech 
+    if "staropramen" in collider.name
+        call scores and incremenmt for staropramen
+
+"""
+
 var rand = RandomNumberGenerator.new()
 
 onready var player = get_node_or_null("../../Player")
