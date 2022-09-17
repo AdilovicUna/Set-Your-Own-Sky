@@ -6,6 +6,7 @@ const POS = [-5, 0, 5]
 var beers = []
 var next_beer_xPos = 100
 
+onready var player = get_node_or_null("../../Player")
 """
 loop through collisions of player
 for each collision chech 
@@ -31,3 +32,10 @@ func generate_beer():
     
 func _physics_process(_delta):
     generate_beer()	
+    
+    # Check for collision
+    collision_check()
+    
+func collision_check():
+    
+    pass

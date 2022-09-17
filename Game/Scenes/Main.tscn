@@ -142,6 +142,48 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="UI/ColorRect"]
+margin_left = 90.51
+margin_top = 4.0
+margin_right = 180.51
+margin_bottom = 59.0
+text = "0/N"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="UI/ColorRect"]
+margin_left = 346.482
+margin_top = 4.0
+margin_right = 436.482
+margin_bottom = 59.0
+text = "0/N"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="UI/ColorRect"]
+margin_left = 625.186
+margin_top = 4.0
+margin_right = 715.186
+margin_bottom = 59.0
+text = "0/N"
+align = 1
+valign = 1
+
+[node name="Label4" type="Label" parent="UI/ColorRect"]
+margin_left = 885.545
+margin_top = 4.0
+margin_right = 975.545
+margin_bottom = 59.0
+text = "0/N"
+align = 1
+valign = 1
+
 [node name="Scores" type="Control" parent="UI"]
 margin_right = 40.0
 margin_bottom = 40.0
