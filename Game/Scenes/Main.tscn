@@ -46,9 +46,9 @@ uv1_scale = Vector3( 12, 12, 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.932, 0, 0 )
 
 [node name="Camera" type="Camera" parent="Player"]
-transform = Transform( 0.00111436, 0.322742, -0.946486, 0.00126962, 0.946486, 0.322744, 0.999999, -0.00156133, 0.000644965, -6.52319, 8.44743, 0.257544 )
+transform = Transform( 0.00112627, 0.331648, -0.943402, 0.00125906, 0.943402, 0.33165, 0.999999, -0.00156133, 0.000644965, -5.002, 7.06488, 0 )
 fov = 67.5
-far = 75.0
+far = 120.0
 
 [node name="Environment" type="Node" parent="."]
 
