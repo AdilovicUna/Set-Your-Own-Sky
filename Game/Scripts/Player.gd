@@ -1,6 +1,6 @@
 extends KinematicBody
 
-onready var ground = get_node_or_null("../Ground")
+onready var ground = get_node_or_null("../Environment/Ground")
 const SPEED = 15.0
 
 func _physics_process(delta):
