@@ -5,3 +5,4 @@
 [node name="Tree" type="Spatial"]
 
 [node name="Tree" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0 )
