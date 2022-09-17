@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Exports/Lamp/Lamp.glb" type="PackedScene" id=1]
+
+[node name="Lamp" type="Spatial"]
+
+[node name="Lamp" parent="." instance=ExtResource( 1 )]
+transform = Transform( -6.51683e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -6.51683e-08, 0, -1, 10 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( -1.62533e-07, -1, -1.58832e-08, -0.0487452, -7.94161e-09, 0.998811, -0.998811, 1.63114e-07, -0.0487452, -0.114, 9, 6.16298 )
+light_color = Color( 0.835294, 0.803922, 0.592157, 1 )
+light_energy = 4.99
+shadow_enabled = true
+spot_range = 13.2
+spot_attenuation = 0.574349
+spot_angle = 30.0
+spot_angle_attenuation = 0.406126
