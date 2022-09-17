@@ -1,7 +1,6 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Ground.gd" type="Script" id=3]
 [ext_resource path="res://Texture/grass/grass1-albedo3.png" type="Texture" id=4]
 [ext_resource path="res://Texture/grass/grass1-normal1-ogl.png" type="Texture" id=5]
@@ -43,11 +42,10 @@ uv1_scale = Vector3( 12, 12, 1 )
 [node name="Main" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.93195, 1.51679, 0 )
-script = ExtResource( 2 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.932, 0, 0 )
 
 [node name="Camera" type="Camera" parent="Player"]
-transform = Transform( -1.57404e-07, 0.258026, -0.966138, 4.20379e-08, 0.966138, 0.258026, 1, -5.68434e-14, -1.62921e-07, -6.66501, 5.63241, 0 )
+transform = Transform( 0.0011639, 0.360076, -0.932922, 0.00122436, 0.932922, 0.360077, 0.999999, -0.00156133, 0.000644961, -6.52319, 8.44743, 0.257544 )
 
 [node name="Environment" type="Node" parent="."]
 
