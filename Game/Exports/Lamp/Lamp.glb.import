@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Beer_light.glb-5a83fbb55831fb0e832cf8a2918dd5f1.scn"
+path="res://.import/Lamp.glb-0f8909fbdf25c5919695bf9e82a6d555.scn"
 
 [deps]
 
-source_file="res://Exports/Beer_light.glb"
-dest_files=[ "res://.import/Beer_light.glb-5a83fbb55831fb0e832cf8a2918dd5f1.scn" ]
+source_file="res://Exports/Lamp/Lamp.glb"
+dest_files=[ "res://.import/Lamp.glb-0f8909fbdf25c5919695bf9e82a6d555.scn" ]
 
 [params]
 
