@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Beer_light.glb-62b41f3d33cde34cb8f759249c2f4c6c.scn"
+path="res://.import/Kozel.glb-9877f2ed329e721dc77caada36985ea8.scn"
 
 [deps]
 
-source_file="res://Exports/Beer_light/Beer_light.glb"
-dest_files=[ "res://.import/Beer_light.glb-62b41f3d33cde34cb8f759249c2f4c6c.scn" ]
+source_file="res://Exports/Beers/Kozel/Kozel.glb"
+dest_files=[ "res://.import/Kozel.glb-9877f2ed329e721dc77caada36985ea8.scn" ]
 
 [params]
 
