@@ -9,10 +9,7 @@ const OFFSET = 20
 onready var player = get_node_or_null("../../Player")
 
 func _ready():
-	#rand.randomize()
-	#var num_trees = rand.randi_range(30, 50)
 	var trees = 10
-	
 	for n_tree in trees:
 		# road size width and lendth is 9 and 100 and position (0,0.1,0)
 		add_tree()
