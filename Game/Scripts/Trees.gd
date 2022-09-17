@@ -14,7 +14,6 @@ func _ready():
 		# road size width and lendth is 9 and 100 and position (0,0.1,0)
 		var x = rand.randi_range(0, 100)
 		
-		var y = randi.range()
 func _process(delta):
 	pass
 
