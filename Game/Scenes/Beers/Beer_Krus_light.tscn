@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Exports/Beers/Beer_light/Beer_light.glb" type="PackedScene" id=1]
+
+[node name="Beer_Krus_light" type="Spatial"]
+
+[node name="Beer_light" parent="." instance=ExtResource( 1 )]
