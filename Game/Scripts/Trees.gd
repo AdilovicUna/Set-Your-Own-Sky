@@ -16,8 +16,6 @@ func _ready():
 		
 func _physics_process(_delta):
 	if player.translation.x > next_tree_x_pos - 7 * OFFSET:
-		
-		print("NOW")
 		add_tree()
 		
 	delete_tree()
@@ -25,11 +23,9 @@ func _physics_process(_delta):
 func delete_tree():
 	for tree in get_children():
 		if player.translation.x > tree.translation.x + OFFSET:
-			print("DELETED")
 			tree.queue_free()
 
 func add_tree():
-	print("Called")
 	var tree_l = scene.instance()
 	var tree_r = scene.instance()
 	
