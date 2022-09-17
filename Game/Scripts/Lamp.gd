@@ -13,7 +13,7 @@ func _ready():
 		add_lamp()
 
 func _physics_process(_delta):
-	if player.translation.x > next_lamp_x_pos - DISTANCE_BETWEEN_LAMPS:
+	if player.translation.x > next_lamp_x_pos - 3 * DISTANCE_BETWEEN_LAMPS:
 		add_lamp()
 		
 	delete_lamp()
