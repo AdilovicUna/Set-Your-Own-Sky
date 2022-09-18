@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Trees.gd" type="Script" id=2]
@@ -20,6 +20,8 @@
 [ext_resource path="res://Scripts/CameraBox.gd" type="Script" id=18]
 [ext_resource path="res://Scripts/Obstacles.gd" type="Script" id=19]
 [ext_resource path="res://Font/BASKVILL.TTF" type="DynamicFontData" id=20]
+[ext_resource path="res://Sound/background.wav" type="AudioStream" id=21]
+[ext_resource path="res://Sound/click.ogg" type="AudioStream" id=22]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0, 0, 0, 0 )
@@ -257,69 +259,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Lost" type="Control" parent="UI/Menu"]
-visible = false
+[node name="ColorRect2" type="ColorRect" parent="UI/Menu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect" type="ColorRect" parent="UI/Menu/Lost"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.678431, 0.34902, 0.34902, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="UI/Menu/Lost"]
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_top = -15.5
-margin_bottom = 15.5
-text = "Unfortunately you didn't manage to achieve your goals :(
-Don't hesitate to try again though :D"
-align = 1
-valign = 1
-
-[node name="Won" type="Control" parent="UI/Menu"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect" type="ColorRect" parent="UI/Menu/Won"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.678431, 0.34902, 0.34902, 1 )
-
-[node name="Label" type="Label" parent="UI/Menu/Won"]
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_top = -32.5
-margin_bottom = 32.5
-text = "You achieved your goals!
-Congratulations!"
-align = 1
-valign = 1
+margin_right = 985.0
+margin_bottom = 562.0
+color = Color( 0.513726, 0.360784, 0.313726, 0.278431 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Start" type="Control" parent="UI/Menu"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="SpinBox" type="SpinBox" parent="UI/Menu/Start"]
 margin_left = 413.238
 margin_top = 275.014
 margin_right = 679.238
 margin_bottom = 316.014
+min_value = 1.0
+value = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -329,6 +293,8 @@ margin_left = 413.238
 margin_top = 353.769
 margin_right = 679.238
 margin_bottom = 394.769
+min_value = 1.0
+value = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -338,6 +304,8 @@ margin_left = 412.498
 margin_top = 427.718
 margin_right = 678.498
 margin_bottom = 468.718
+min_value = 1.0
+value = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -347,15 +315,9 @@ margin_left = 411.959
 margin_top = 203.0
 margin_right = 677.959
 margin_bottom = 244.0
+min_value = 1.0
 max_value = 200.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect" type="ColorRect" parent="UI/Menu/Start"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.513726, 0.360784, 0.313726, 0.278431 )
+value = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -393,9 +355,9 @@ __meta__ = {
 [node name="TextureRect5" type="TextureRect" parent="UI/Menu/Start"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 353.333
+margin_left = 363.412
 margin_top = 188.33
-margin_right = 436.333
+margin_right = 446.412
 margin_bottom = 377.33
 rect_scale = Vector2( 0.280001, 0.255369 )
 texture = ExtResource( 16 )
@@ -455,4 +417,112 @@ text = "Start"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Lost" type="Control" parent="UI/Menu"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI/Menu/Lost"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -15.5
+margin_bottom = 15.5
+text = "Unfortunately you didn't manage to achieve your goals :(
+Don't hesitate to try again though :D"
+align = 1
+valign = 1
+
+[node name="End" type="Button" parent="UI/Menu/Lost"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 73.9703
+margin_top = -148.195
+margin_right = 235.97
+margin_bottom = -88.1945
+text = "End"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Restart" type="Button" parent="UI/Menu/Lost"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -241.01
+margin_top = -148.195
+margin_right = -79.0098
+margin_bottom = -88.1945
+text = "Restart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Won" type="Control" parent="UI/Menu"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI/Menu/Won"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -32.5
+margin_bottom = 32.5
+text = "You achieved your goals!
+Congratulations!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="End2" type="Button" parent="UI/Menu/Won"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 77.7501
+margin_top = -148.194
+margin_right = 239.75
+margin_bottom = -88.1945
+text = "End"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Restart2" type="Button" parent="UI/Menu/Won"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -241.01
+margin_top = -150.714
+margin_right = -79.0098
+margin_bottom = -90.7143
+text = "Restart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 21 )
+autoplay = true
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 22 )
 [connection signal="pressed" from="UI/Menu/Start/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="UI/Menu/Lost/End" to="." method="_on_End_pressed"]
+[connection signal="pressed" from="UI/Menu/Lost/Restart" to="." method="_on_Restart_pressed"]
+[connection signal="pressed" from="UI/Menu/Won/End2" to="." method="_on_End2_pressed"]
+[connection signal="pressed" from="UI/Menu/Won/Restart2" to="." method="_on_Restart_pressed"]

@@ -9,6 +9,7 @@ onready var startMenu = get_node_or_null("UI/Menu/Start")
 onready var winMenu = get_node_or_null("UI/Menu/Won")
 onready var lostMenu =  get_node_or_null("UI/Menu/Lost")
 onready var scores = get_node_or_null("UI/Toolbar/Scores")
+onready var click = get_node_or_null("Click")
 
 var rand = RandomNumberGenerator.new()
 
@@ -19,7 +20,8 @@ var offset = 0
 var started = false
 
 func _ready():
-    pass
+    click.stream.loop = false
+    startMenu.show()
     
 func start():
     rand.randomize()
@@ -47,7 +49,19 @@ func generate_object():
         beer_xPos += offset
         beers.generate_beer(beer_xPos)
 
+
+func game_over(win):
+    toolbar.hide()
+    menu.show()
+    startMenu.hide()
+    
+    if win:
+        winMenu.show()
+    else:
+        lostMenu.show()
+        
 func _on_Button_pressed():
+    click.play()
     menu.hide()
     toolbar.show()
     var p1 = int(startMenu.get_child(0).get_line_edit().text)
@@ -56,9 +70,15 @@ func _on_Button_pressed():
     var p4 = int(startMenu.get_child(3).get_line_edit().text)
     scores.set_param(p1, p2, p3, p4)
     start()
+    
+func _on_End2_pressed():
+    click.play()
+    get_tree().quit()
 
-func game_over(win):
-    if win:
-        winMenu.show()
-    else:
-        lostMenu.show()
+func _on_End_pressed():
+    click.play()
+    get_tree().quit()
+
+func _on_Restart_pressed():
+    click.play()
+    get_tree().reload_current_scene()

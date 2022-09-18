@@ -14,16 +14,16 @@ var kozel_goal = 0
 var staropramen_goal = 0
 
 func change_score(type):
-    if "light" in type:
+    if "light" in type and krus_light_score < krus_light_goal:
         krus_light_score += 1
         get_child(0).text = "%d/%d" % [krus_light_score, krus_light_goal]
-    elif "dark" in type:
+    elif "dark" in type and krus_dark_score < krus_dark_goal:
         krus_dark_score += 1
         get_child(1).text = "%d/%d" % [krus_dark_score, krus_dark_goal]
-    elif "Kozel" in type:
+    elif "Kozel" in type and kozel_score < kozel_goal:
         kozel_score += 1
         get_child(2).text = "%d/%d" % [kozel_score, kozel_goal]
-    elif "Staropramen" in type:
+    elif "Staropramen" in type and staropramen_score < staropramen_goal:
         staropramen_score += 1
         get_child(3).text = "%d/%d" % [staropramen_score, staropramen_goal]
     
@@ -36,6 +36,7 @@ func change_score(type):
         krus_dark_score == krus_dark_goal and
         kozel_score == kozel_goal and
         staropramen_score == staropramen_goal):
+    
             main.game_over(true)
     
 func set_param(p1, p2, p3, p4):

@@ -8,7 +8,7 @@ const SPEED = 15.0
 const TURNING_SPEED = 0.5
 const LEFT_LIMIT = -5.5
 const RIGHT_LIMIT = 5.5
-const JUMP_LIMIT = 6
+const JUMP_LIMIT = 8
 const GRAVITY = -10
 
 var increase = false

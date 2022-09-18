@@ -34,4 +34,5 @@ func collision_check():
         if "Beer" in collision.collider.name or "Water" in collision.collider.name:
             scores.change_score(collision.collider.name)
             collision.collider.queue_free()
+            player.get_child(2).play()
             return
