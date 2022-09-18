@@ -81,6 +81,8 @@ script = ExtResource( 10 )
 [node name="Beers" type="Spatial" parent="Environment"]
 script = ExtResource( 11 )
 
+[node name="Obstacles" type="Spatial" parent="Environment"]
+
 [node name="UI" type="Control" parent="."]
 margin_left = -1.7818
 margin_right = 1024.22
