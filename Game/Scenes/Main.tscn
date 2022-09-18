@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=24 format=2]
-=======
-[gd_scene load_steps=21 format=2]
->>>>>>> fd381cb139f50df30b3a60584c8e45e2804a92fe
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Trees.gd" type="Script" id=2]
@@ -21,23 +17,18 @@
 [ext_resource path="res://img/kozel.png" type="Texture" id=15]
 [ext_resource path="res://img/krus_light.png" type="Texture" id=16]
 [ext_resource path="res://img/staro.png" type="Texture" id=17]
-<<<<<<< HEAD
 [ext_resource path="res://Scripts/CameraBox.gd" type="Script" id=18]
-[ext_resource path="res://Scenes/Water.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Scenes/Beers/Beer_Kozel.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scripts/Obstacles.gd" type="Script" id=19]
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0, 0, 0, 0 )
 metallic_specular = 0.0
 roughness = 0.0
 refraction_enabled = true
 refraction_scale = 0.05
 refraction_texture_channel = 0
-=======
-[ext_resource path="res://Scripts/Obstacles.gd" type="Script" id=21]
->>>>>>> fd381cb139f50df30b3a60584c8e45e2804a92fe
 
-[sub_resource type="SpatialMaterial" id=1]
+[sub_resource type="SpatialMaterial" id=2]
 albedo_texture = ExtResource( 7 )
 roughness_texture = ExtResource( 8 )
 ao_enabled = true
@@ -47,7 +38,7 @@ ao_on_uv2 = false
 ao_texture_channel = 0
 uv1_scale = Vector3( 1, 5, 1 )
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="SpatialMaterial" id=3]
 params_line_width = 0.1
 albedo_color = Color( 0.584314, 0.376471, 0.486275, 0.65098 )
 albedo_texture = ExtResource( 4 )
@@ -79,7 +70,7 @@ far = 120.0
 
 [node name="CamerBox" type="CSGBox" parent="Player/Camera"]
 transform = Transform( 1, -1.16415e-10, -3.49246e-10, 1.16415e-10, 0.999999, -5.33186e-08, 1.74623e-10, -2.35166e-08, 0.999999, 0.00141029, 0.415281, -1.1813 )
-material = SubResource( 3 )
+material = SubResource( 1 )
 script = ExtResource( 18 )
 
 [node name="Environment" type="Node" parent="."]
@@ -90,11 +81,11 @@ script = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Environment/Ground"]
 transform = Transform( 100, 0, 0, 0, 0.1, 0, 0, 0, 9, 0, 0.1, 0 )
-material = SubResource( 1 )
+material = SubResource( 2 )
 
 [node name="CSGBox2" type="CSGBox" parent="Environment/Ground"]
 transform = Transform( 100, 0, 0, 0, 0.1, 0, 0, 0, 200, 0, 0, 0 )
-material = SubResource( 2 )
+material = SubResource( 3 )
 
 [node name="Trees" type="Spatial" parent="Environment"]
 script = ExtResource( 2 )
@@ -106,28 +97,12 @@ script = ExtResource( 10 )
 script = ExtResource( 11 )
 
 [node name="Obstacles" type="Spatial" parent="Environment"]
-<<<<<<< HEAD
-
-[node name="Water" parent="Environment/Obstacles" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3726, 0 )
-
-[node name="Beer_Kozel" parent="Environment/Obstacles" instance=ExtResource( 20 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97148, 2.8344 )
+script = ExtResource( 19 )
 
 [node name="UI" type="Control" parent="."]
 margin_left = -1.7818
 margin_right = 1024.22
 margin_bottom = 597.0
-=======
-script = ExtResource( 21 )
-
-[node name="UI" type="Control" parent="."]
-anchor_right = 1.0
-anchor_bottom = 0.995
-margin_top = -1.41425
-margin_right = 2.0
-margin_bottom = -1.41431
->>>>>>> fd381cb139f50df30b3a60584c8e45e2804a92fe
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -142,7 +117,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-<<<<<<< HEAD
 [node name="TextureRect" type="TextureRect" parent="UI/Toolbar"]
 margin_left = 63.1882
 margin_top = -0.171875
@@ -192,17 +166,6 @@ margin_left = 10.6907
 margin_top = -540.0
 margin_right = 50.6907
 margin_bottom = -500.0
-=======
-[node name="Scores" type="Control" parent="UI/Toolbar"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -512.0
-margin_top = -32.0
-margin_right = 512.0
-margin_bottom = 32.0
->>>>>>> fd381cb139f50df30b3a60584c8e45e2804a92fe
 script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -241,21 +204,11 @@ text = "0/N"
 align = 1
 valign = 1
 
-<<<<<<< HEAD
 [node name="Staropramen" type="Label" parent="UI/Toolbar/Scores"]
 margin_left = 885.545
 margin_top = 544.0
 margin_right = 975.545
 margin_bottom = 599.0
-=======
-[node name="Staroprmen" type="Label" parent="UI/Toolbar/Scores"]
-anchor_right = 1.0
-anchor_bottom = 0.943
-margin_left = 900.665
-margin_top = 2.33484
-margin_right = -53.3348
-margin_bottom = -0.0171623
->>>>>>> fd381cb139f50df30b3a60584c8e45e2804a92fe
 text = "0/N"
 align = 1
 valign = 1

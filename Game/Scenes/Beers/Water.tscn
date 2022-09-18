@@ -7,8 +7,8 @@
 [node name="Water" type="KinematicBody"]
 
 [node name="Water" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.74172, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 0.671683, 0, 0, 0, -2.38483e-07, -1.4638, 0, 0.669271, -1.09038e-07, 0, 0.651456, 0 )
+transform = Transform( 0.671683, 0, 0, 0, -2.16723e-07, -1.33024, 0, 0.669271, -1.09038e-07, 0, 2.50197, 0 )
 shape = SubResource( 1 )

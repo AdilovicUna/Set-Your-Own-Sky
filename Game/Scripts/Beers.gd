@@ -15,6 +15,10 @@ func _physics_process(_delta):
 func generate_beer(x):
     var pos_index = rand.randi_range(0, POS.size() - 1)
     var beer_index = rand.randi_range(0, beers.size() - 1)
+    
+    var i = rand.randf_range(0,1)
+    if i > 0.7:
+        beer_index = 4
         
     var beer = beers[beer_index].instance()
     
@@ -25,7 +29,7 @@ func generate_beer(x):
 func collision_check():
     for index in player.get_slide_count():
         var collision = player.get_slide_collision(index)
-        if "Beer" in collision.collider.name:
-            scores.increment_score(collision.collider.name)
+        if "Beer" in collision.collider.name or "Water" in collision.collider.name:
+            scores.change_score(collision.collider.name)
             collision.collider.queue_free()
             return
