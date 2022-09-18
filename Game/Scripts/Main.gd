@@ -82,3 +82,19 @@ func _on_End_pressed():
 func _on_Restart_pressed():
     click.play()
     get_tree().reload_current_scene()
+
+
+func _on_SpinBox_value_changed(value):
+    click.play()
+
+
+func _on_SpinBox2_value_changed(value):
+    click.play()
+
+
+func _on_SpinBox3_value_changed(value):
+    click.play()
+
+
+func _on_SpinBox4_value_changed(value):
+    click.play()

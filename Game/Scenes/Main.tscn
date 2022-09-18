@@ -262,15 +262,16 @@ __meta__ = {
 [node name="ColorRect2" type="ColorRect" parent="UI/Menu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 985.0
-margin_bottom = 562.0
+margin_left = -60.408
+margin_top = -88.7242
+margin_right = 924.592
+margin_bottom = 473.276
 color = Color( 0.513726, 0.360784, 0.313726, 0.278431 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Start" type="Control" parent="UI/Menu"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
@@ -278,10 +279,10 @@ __meta__ = {
 }
 
 [node name="SpinBox" type="SpinBox" parent="UI/Menu/Start"]
-margin_left = 413.238
-margin_top = 275.014
-margin_right = 679.238
-margin_bottom = 316.014
+margin_left = 423.694
+margin_top = 197.96
+margin_right = 689.694
+margin_bottom = 238.96
 min_value = 1.0
 value = 1.0
 __meta__ = {
@@ -289,10 +290,10 @@ __meta__ = {
 }
 
 [node name="SpinBox2" type="SpinBox" parent="UI/Menu/Start"]
-margin_left = 413.238
-margin_top = 353.769
-margin_right = 679.238
-margin_bottom = 394.769
+margin_left = 423.291
+margin_top = 265.558
+margin_right = 689.291
+margin_bottom = 306.558
 min_value = 1.0
 value = 1.0
 __meta__ = {
@@ -300,10 +301,10 @@ __meta__ = {
 }
 
 [node name="SpinBox3" type="SpinBox" parent="UI/Menu/Start"]
-margin_left = 412.498
-margin_top = 427.718
-margin_right = 678.498
-margin_bottom = 468.718
+margin_left = 423.548
+margin_top = 333.916
+margin_right = 689.548
+margin_bottom = 374.916
 min_value = 1.0
 value = 1.0
 __meta__ = {
@@ -311,10 +312,10 @@ __meta__ = {
 }
 
 [node name="SpinBox4" type="SpinBox" parent="UI/Menu/Start"]
-margin_left = 411.959
-margin_top = 203.0
-margin_right = 677.959
-margin_bottom = 244.0
+margin_left = 423.549
+margin_top = 408.609
+margin_right = 689.549
+margin_bottom = 449.609
 min_value = 1.0
 max_value = 200.0
 value = 1.0
@@ -325,9 +326,9 @@ __meta__ = {
 [node name="Label" type="Label" parent="UI/Menu/Start"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 146.5
-margin_right = 837.5
-margin_bottom = 260.0
+margin_left = 147.0
+margin_right = 838.0
+margin_bottom = 119.0
 text = "Anyone can achieve anything. 
 Set your drinking goal for tonight:"
 align = 1
@@ -396,10 +397,10 @@ __meta__ = {
 [node name="TextureRect8" type="TextureRect" parent="UI/Menu/Start"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 367.257
-margin_top = 413.762
-margin_right = 433.257
-margin_bottom = 576.762
+margin_left = 368.671
+margin_top = 401.034
+margin_right = 434.671
+margin_bottom = 564.034
 rect_scale = Vector2( 0.320002, 0.320001 )
 texture = ExtResource( 17 )
 __meta__ = {
@@ -521,6 +522,10 @@ autoplay = true
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 22 )
+[connection signal="value_changed" from="UI/Menu/Start/SpinBox" to="." method="_on_SpinBox_value_changed"]
+[connection signal="value_changed" from="UI/Menu/Start/SpinBox2" to="." method="_on_SpinBox2_value_changed"]
+[connection signal="value_changed" from="UI/Menu/Start/SpinBox3" to="." method="_on_SpinBox3_value_changed"]
+[connection signal="value_changed" from="UI/Menu/Start/SpinBox4" to="." method="_on_SpinBox4_value_changed"]
 [connection signal="pressed" from="UI/Menu/Start/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="UI/Menu/Lost/End" to="." method="_on_End_pressed"]
 [connection signal="pressed" from="UI/Menu/Lost/Restart" to="." method="_on_Restart_pressed"]
