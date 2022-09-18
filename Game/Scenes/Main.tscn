@@ -81,8 +81,6 @@ script = ExtResource( 10 )
 [node name="Beers" type="Spatial" parent="Environment"]
 script = ExtResource( 11 )
 
-[node name="Obstacles" type="Spatial" parent="Environment"]
-
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 0.995
