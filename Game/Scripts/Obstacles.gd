@@ -5,6 +5,7 @@ var pos = [-5, 0, 5]
 var wall_pos = [-3, 3]
 
 onready var player = get_node_or_null("../../Player")
+onready var main = get_node_or_null("../../")
 
 var rand = RandomNumberGenerator.new()
 
@@ -12,14 +13,15 @@ func _ready():
     rand.randomize()
 
 func _physics_process(_delta):
-    check_collision()
+    if main.started:
+        check_collision()
     
 func check_collision():
     for index in player.get_slide_count():
         var collision = player.get_slide_collision(index)
         var name = collision.collider.name
         if "Road" in name or "Wall" in name or "Cone" in name:
-            print("COLLISION: ", name)
+            main.game_over(false)
         
             
 func generate_obstacle(x):

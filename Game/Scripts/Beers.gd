@@ -6,11 +6,13 @@ var beers = []
 
 onready var player = get_node_or_null("../../Player")
 onready var scores = get_node_or_null("../../UI/Toolbar/Scores")
+onready var main = get_node_or_null("../../")
 
 var rand = RandomNumberGenerator.new()
 
 func _physics_process(_delta):
-    collision_check()
+    if main.started:
+        collision_check()
 
 func generate_beer(x):
     var pos_index = rand.randi_range(0, POS.size() - 1)

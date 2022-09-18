@@ -1,6 +1,7 @@
 extends KinematicBody
 
 onready var ground = get_node_or_null("../Environment/Ground")
+onready var main = get_node_or_null("../")
 onready var animation = get_node_or_null("Dev/Animation")
 
 const SPEED = 15.0
@@ -13,6 +14,9 @@ const GRAVITY = -10
 var increase = false
 
 func _physics_process(_delta):
+    if not main.started:
+        return
+        
     var velocity = Vector3.RIGHT * SPEED
     var _return = move_and_slide(velocity)
     ground.update_pos(translation.x)

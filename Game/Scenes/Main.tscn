@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Trees.gd" type="Script" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://img/staro.png" type="Texture" id=17]
 [ext_resource path="res://Scripts/CameraBox.gd" type="Script" id=18]
 [ext_resource path="res://Scripts/Obstacles.gd" type="Script" id=19]
+[ext_resource path="res://Font/BASKVILL.TTF" type="DynamicFontData" id=20]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0, 0, 0, 0 )
@@ -56,6 +57,17 @@ depth_deep_parallax = false
 depth_flip_tangent = false
 depth_flip_binormal = false
 uv1_scale = Vector3( 12, 12, 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+outline_size = 2
+outline_color = Color( 0.0745098, 0.054902, 0.054902, 1 )
+use_filter = true
+extra_spacing_space = 12
+font_data = ExtResource( 20 )
+
+[sub_resource type="Theme" id=5]
+default_font = SubResource( 4 )
 
 [node name="Main" type="Node"]
 script = ExtResource( 12 )
@@ -107,12 +119,13 @@ __meta__ = {
 }
 
 [node name="Toolbar" type="ColorRect" parent="UI"]
+visible = false
 anchor_top = 0.905
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.694118, 0.27451, 0.27451, 0.341176 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="TextureRect" type="TextureRect" parent="UI/Toolbar"]
@@ -237,6 +250,14 @@ align = 1
 valign = 1
 
 [node name="Menu" type="Control" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lost" type="Control" parent="UI/Menu"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -244,10 +265,194 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="UI/Menu"]
+[node name="ColorRect" type="ColorRect" parent="UI/Menu/Lost"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.85098, 0.482353, 0.368627, 0.380392 )
+color = Color( 0.678431, 0.34902, 0.34902, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label" type="Label" parent="UI/Menu/Lost"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -15.5
+margin_bottom = 15.5
+text = "Unfortunately you didn't manage to achieve your goals :(
+Don't hesitate to try again though :D"
+align = 1
+valign = 1
+
+[node name="Won" type="Control" parent="UI/Menu"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="UI/Menu/Won"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.678431, 0.34902, 0.34902, 1 )
+
+[node name="Label" type="Label" parent="UI/Menu/Won"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -32.5
+margin_bottom = 32.5
+text = "You achieved your goals!
+Congratulations!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="Control" parent="UI/Menu"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="SpinBox" type="SpinBox" parent="UI/Menu/Start"]
+margin_left = 413.238
+margin_top = 275.014
+margin_right = 679.238
+margin_bottom = 316.014
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpinBox2" type="SpinBox" parent="UI/Menu/Start"]
+margin_left = 413.238
+margin_top = 353.769
+margin_right = 679.238
+margin_bottom = 394.769
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpinBox3" type="SpinBox" parent="UI/Menu/Start"]
+margin_left = 412.498
+margin_top = 427.718
+margin_right = 678.498
+margin_bottom = 468.718
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpinBox4" type="SpinBox" parent="UI/Menu/Start"]
+margin_left = 411.959
+margin_top = 203.0
+margin_right = 677.959
+margin_bottom = 244.0
+max_value = 200.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="UI/Menu/Start"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.513726, 0.360784, 0.313726, 0.278431 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI/Menu/Start"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 146.5
+margin_right = 837.5
+margin_bottom = 260.0
+text = "Anyone can achieve anything. 
+Set your drinking goal for tonight:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="UI/Menu/Start"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 147.0
+margin_top = 506.0
+margin_right = 838.0
+margin_bottom = 560.0
+text = "And don't forget to hydrate ;)"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect5" type="TextureRect" parent="UI/Menu/Start"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 353.333
+margin_top = 188.33
+margin_right = 436.333
+margin_bottom = 377.33
+rect_scale = Vector2( 0.280001, 0.255369 )
+texture = ExtResource( 16 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect6" type="TextureRect" parent="UI/Menu/Start"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 361.613
+margin_top = 254.0
+margin_right = 421.613
+margin_bottom = 417.0
+rect_scale = Vector2( 0.359999, 0.319998 )
+texture = ExtResource( 14 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect7" type="TextureRect" parent="UI/Menu/Start"]
+anchor_right = 1.0
+anchor_bottom = 1.139
+margin_left = 365.257
+margin_top = 327.227
+margin_right = 445.257
+margin_bottom = 519.667
+rect_scale = Vector2( 0.320001, 0.28 )
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect8" type="TextureRect" parent="UI/Menu/Start"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 367.257
+margin_top = 413.762
+margin_right = 433.257
+margin_bottom = 576.762
+rect_scale = Vector2( 0.320002, 0.320001 )
+texture = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="UI/Menu/Start"]
+anchor_right = 0.226
+anchor_bottom = 0.296
+margin_left = 873.344
+margin_top = 530.317
+margin_right = 931.304
+margin_bottom = 555.477
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="UI/Menu/Start/Button" to="." method="_on_Button_pressed"]
