@@ -25,7 +25,7 @@ func _physics_process(delta):
     
 func generate_object():
     var n = rand.randf_range(0, 1)
-    offset = rand.randi_range(40, 60)
+    offset = rand.randi_range(40, 80)
     
     # 60% for walls
     if n > 0.6:
