@@ -1,5 +1,7 @@
 extends Control
 
+onready var camera_box = get_node('../../../Player/Camera/CamerBox')
+
 var krus_light_score = 0
 var krus_dark_score = 0
 var kozel_score = 0
@@ -23,3 +25,7 @@ func increment_score(type):
     elif "Staropramen" in type:
         staropramen_score += 1
         get_child(3).text = "%d/%d" % [staropramen_score, staropramen_goal]
+    
+    camera_box.increase_roughness()
+    
+    
