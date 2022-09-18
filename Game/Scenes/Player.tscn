@@ -4,9 +4,9 @@
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
 [ext_resource path="res://Exports/Dev/running.tres" type="Animation" id=3]
 
-[sub_resource type="CapsuleShape" id=6]
+[sub_resource type="CapsuleShape" id=1]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 resource_name = "ArmatureAction"
 length = 0.48
 loop = true
@@ -214,7 +214,7 @@ tracks/28/imported = true
 tracks/28/enabled = true
 tracks/28/keys = PoolRealArray( 0.6, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 resource_name = "CapAction"
 length = 0.6
 loop = true
@@ -231,13 +231,13 @@ script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1.71319, 0, 0, 0, 3.06815, 0, 0, 0, 0.727495, 0.461289, 3.44839, -0.16563 )
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Dev" parent="." instance=ExtResource( 1 )]
 transform = Transform( -8.14603e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -8.14603e-08, 0, 0, 0 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Dev"]
 autoplay = "DevArmatureAction"
-anims/DevArmatureAction = SubResource( 4 )
-anims/DevCapAction = SubResource( 5 )
+anims/DevArmatureAction = SubResource( 2 )
+anims/DevCapAction = SubResource( 3 )
 anims/running = ExtResource( 3 )
