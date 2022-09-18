@@ -84,7 +84,8 @@ script = ExtResource( 11 )
 [node name="Obstacles" type="Spatial" parent="Environment"]
 
 [node name="UI" type="Control" parent="."]
-margin_right = 1026.0
+margin_left = -1.7818
+margin_right = 1024.22
 margin_bottom = 597.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -101,9 +102,9 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="UI/Toolbar"]
-margin_left = 52.4975
-margin_top = -0.171753
-margin_right = 209.497
+margin_left = 63.1882
+margin_top = -0.171875
+margin_right = 220.188
 margin_bottom = 246.828
 rect_scale = Vector2( 0.280001, 0.255369 )
 texture = ExtResource( 16 )
@@ -112,9 +113,9 @@ __meta__ = {
 }
 
 [node name="TextureRect2" type="TextureRect" parent="UI/Toolbar"]
-margin_left = 306.884
+margin_left = 317.575
 margin_top = -4.41406
-margin_right = 529.884
+margin_right = 540.575
 margin_bottom = 324.586
 rect_scale = Vector2( 0.359999, 0.319998 )
 texture = ExtResource( 14 )
@@ -123,9 +124,9 @@ __meta__ = {
 }
 
 [node name="TextureRect3" type="TextureRect" parent="UI/Toolbar"]
-margin_left = 582.656
+margin_left = 593.347
 margin_top = -5.65674
-margin_right = 766.656
+margin_right = 777.347
 margin_bottom = 246.343
 rect_scale = Vector2( 0.320001, 0.28 )
 texture = ExtResource( 15 )
@@ -134,9 +135,9 @@ __meta__ = {
 }
 
 [node name="TextureRect4" type="TextureRect" parent="UI/Toolbar"]
-margin_left = 849.942
+margin_left = 860.633
 margin_top = -2.82837
-margin_right = 1039.94
+margin_right = 1050.63
 margin_bottom = 267.172
 rect_scale = Vector2( 0.320002, 0.320001 )
 texture = ExtResource( 17 )
@@ -145,8 +146,9 @@ __meta__ = {
 }
 
 [node name="Scores" type="Control" parent="UI/Toolbar"]
+margin_left = 10.6907
 margin_top = -540.0
-margin_right = 40.0
+margin_right = 50.6907
 margin_bottom = -500.0
 script = ExtResource( 13 )
 __meta__ = {
@@ -186,7 +188,7 @@ text = "0/N"
 align = 1
 valign = 1
 
-[node name="Staroprmen" type="Label" parent="UI/Toolbar/Scores"]
+[node name="Staropramen" type="Label" parent="UI/Toolbar/Scores"]
 margin_left = 885.545
 margin_top = 544.0
 margin_right = 975.545

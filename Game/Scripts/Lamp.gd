@@ -9,7 +9,7 @@ onready var player = get_node_or_null("../../Player")
 
 func _ready():
     # generate beginning
-    for i in range (0,5):
+    for _i in range (0,5):
         add_lamp()
 
 func _physics_process(_delta):
