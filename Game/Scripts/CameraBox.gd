@@ -3,7 +3,8 @@ extends CSGBox
 var r = 0.0
 
 func increase_roughness():
-    r += 0.03
+    if r < 0.45:
+        r += 0.03
     set_material_param()
 
 func decrease_roughness():

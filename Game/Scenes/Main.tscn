@@ -212,3 +212,16 @@ margin_bottom = 599.0
 text = "0/N"
 align = 1
 valign = 1
+
+[node name="Menu" type="Control" parent="UI"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="UI/Menu"]
+anchor_right = 25.625
+anchor_bottom = 14.95
+margin_right = -0.00012207
+color = Color( 0.85098, 0.482353, 0.368627, 0.380392 )
