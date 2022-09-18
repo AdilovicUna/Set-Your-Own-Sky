@@ -11,6 +11,8 @@ onready var main = get_node_or_null("../../")
 var rand = RandomNumberGenerator.new()
 
 func _physics_process(_delta):
+    if main.ended:
+        return
     if main.started:
         collision_check()
 

@@ -13,6 +13,9 @@ func _ready():
     rand.randomize()
 
 func _physics_process(_delta):
+    if main.ended:
+        return
+        
     if main.started:
         check_collision()
     

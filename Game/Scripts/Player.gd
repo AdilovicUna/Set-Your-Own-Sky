@@ -14,7 +14,7 @@ const GRAVITY = -10
 var increase = false
 
 func _physics_process(_delta):
-    if not main.started:
+    if not main.started or main.ended:
         return
         
     var velocity = Vector3.RIGHT * SPEED

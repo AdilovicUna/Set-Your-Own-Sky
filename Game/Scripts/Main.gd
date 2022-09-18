@@ -18,6 +18,7 @@ var obs_xPos = 50
 var offset = 0
 
 var started = false
+var ended = false
 
 func _ready():
     click.stream.loop = false
@@ -54,11 +55,13 @@ func game_over(win):
     toolbar.hide()
     menu.show()
     startMenu.hide()
-    
+      
     if win:
         winMenu.show()
     else:
         lostMenu.show()
+    
+    ended = true
         
 func _on_Button_pressed():
     click.play()
@@ -80,6 +83,7 @@ func _on_End_pressed():
     get_tree().quit()
 
 func _on_Restart_pressed():
+    ended = false
     click.play()
     get_tree().reload_current_scene()
 
