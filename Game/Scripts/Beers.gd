@@ -7,17 +7,9 @@ var beers = []
 var next_beer_xPos = 100
 
 onready var player = get_node_or_null("../../Player")
-"""
-loop through collisions of player
-for each collision chech 
-    if "staropramen" in collider.name
-        call scores and incremenmt for staropramen
-
-"""
+onready var scores = get_node_or_null("../../UI/Toolbar/Scores")
 
 var rand = RandomNumberGenerator.new()
-
-onready var player = get_node_or_null("../../Player")
 
 func generate_beer():
     var pos_index = rand.randi_range(0, POS.size() - 1)
@@ -37,5 +29,9 @@ func _physics_process(_delta):
     collision_check()
     
 func collision_check():
-    
-    pass
+    for index in player.get_slide_count():
+        var collision = player.get_slide_collision(index)
+        if "Beer" in collision.collider.name:
+            collision.collider.queue_free()
+            scores.increment_score(collision.collider.name)
+            return
