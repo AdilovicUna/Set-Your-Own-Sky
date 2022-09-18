@@ -14,7 +14,7 @@ var offset = 0
 func _ready():
     rand.randomize()
     for name in ["Beer_Kozel", "Beer_Krus_dark", "Beer_Krus_light", 
-    "Beer_Staropramen"]:
+    "Beer_Staropramen", "Water"]:
         beers.beers.append(load("res://Scenes/Beers/" + name + ".tscn"))
 
     for name in ["Cone", "Road_sign", "Wall"]:
